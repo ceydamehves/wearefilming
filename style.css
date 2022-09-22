@@ -57,7 +57,6 @@ main {
 }
 
 footer {
-  background: #1de9b6;
   grid-area: footer;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
@@ -72,13 +71,22 @@ a {
   margin: 1rem;
 }
 
+#buttonarea {
+  grid-area: buttonarea;
+  padding-top: var(--main-padding);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
 @media only screen and (max-width: 550px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 0.4fr 1.2fr 2.2fr 1fr;
+    grid-template-rows: 0.4fr 0.4fr 0.3fr 1.2fr 2.2fr 1fr;
     grid-template-areas:
       "nav"      
       "main"
+      "buttonarea"
       "content"
       "footer"
       "sidebar";
@@ -86,12 +94,26 @@ a {
   .row {
     flex-direction: column;
   }
+  #buttonarea {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .appStore {
+    padding-top: 10px;
+    margin-right: 30px;
+  }
+  .playStore {
+    padding-top: 10px;
+    margin-right: 18px;
+  }
 }
 
 /* other styles */
 
 .logo {
-  height: 6vh;
+  height: 7vh;
   margin: 1rem;
 }
 
@@ -116,10 +138,6 @@ br {
   color: #6BDFDA;
 }
 
-.buttons {
-  margin-top: 30px;
-}
-
 .button {
   display: inline-block;
   border-radius: 40px;
@@ -128,8 +146,8 @@ br {
   color: #232323;
   text-align: center;
   font-size: 22px;
-  padding: 10px;
-  width: 165px;
+  width: 160px;
+  height: 60px;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -160,7 +178,7 @@ br {
 }
 
 p {
-  color: red;
+  color: #2F2F2F;
   font-size: 14px;
   font-weight: 200;
   text-transform: capitalize;
@@ -194,5 +212,37 @@ p {
 }
 
 h3 {
+  color: #2F2F2F;
   margin-left: 5px;
+}
+
+.socialHolder {
+  margin-left: 20px;
+}
+
+.copyright {
+  margin-left: 40px;
+  margin-bottom: 13px;
+  height: 13px;
+  width: 122px;
+}
+
+.socialIcon {
+  height: 24px;
+  width: 24px;
+  margin: 0.5rem;
+}
+
+.appStore {
+  width: 165px;
+  height: 55px;
+  margin-left: 30px;
+  margin-top: 2px;
+}
+
+.playStore {
+  width: 187px;
+  height: 55px;
+  margin-left: 20px;
+  margin-top: 2px;
 }

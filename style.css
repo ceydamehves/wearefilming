@@ -265,75 +265,67 @@ h3 {
 .appImage {
   height: 90vh;
 }
-@keyframes cycle {
-	0%  { right:0px; }
-	4%  { right:0px; } 
-	16% { right:0px; opacity:1; z-index:0; } 
-	20% { right:325px; opacity:0; z-index:0; } 
-	21% { right:-325px; opacity:0; z-index:-1; }
-	92% { right:-325px; opacity:0; z-index:0; }
-	96% { right:-325px; opacity:0; }
-	100%{ right:0px; opacity:1; }
-	
-}
-@keyframes cycletwo {
-	0%  { right:-325px; opacity:0; }
-	16% { right:-325px; opacity:0; }
-	20% { right:0px; opacity:1; }
-	24% { right:0px; opacity:1; } 
-	36% { right:0px; opacity:1; z-index:0; } 
-	40% { right:325px; opacity:0; z-index:0; }
-	41% { right:-325px; opacity:0; z-index:-1; } 
-	100%{ right:-325px; opacity:0; z-index:-1; }
-}
 
-
-/* CONTENT SLIDER */
-#content-slider {
-  margin-top: 25px;
+.mobile {
   height: 812px;
   width: 375px;
 }
 
-/* SLIDER */
-#slider {
-	overflow:visible;
-	position:relative;
-}
-#mask {
-	overflow:hidden;
-  height: 820px;
-}
-#slider ul {
-	margin:0;
-	padding:0;
-	position:relative;
-}
-#slider li {
-	position:absolute;
-	list-style:none;
+/*Basic structure of slider*/
+.slider{
+  width: 375px;
+  overflow: hidden;
 }
 
-#slider li.firstanimation {
-	-moz-animation:cycle 25s linear infinite;	
-	-webkit-animation:cycle 25s linear infinite;		
+/*Area of images*/
+.wrapper{
+  width: 100%;
+  display: flex;
+  animation: slide 16s infinite;
 }
-#slider li.secondanimation {
-	-moz-animation:cycletwo 25s linear infinite;
-	-webkit-animation:cycletwo 25s linear infinite;		
-}
-
-#slider li#first:hover .tooltip, 
-#slider li#second:hover .tooltip {
-	left:0px;
-}
-#slider:hover li, 
-#slider:hover .progress-bar {
-	-moz-animation-play-state:paused;
-	-webkit-animation-play-state:paused;
-}
-
-.mobile {
+.slider2{
   height: 752px;
-  width: 347px;
+  width: 240px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  margin-right: 20px;
+}
+.mobile2 {
+  height: 752px;
+  width: 240px;
+  margin-top: 30px;
+}
+
+.wrapper2{
+  width: 100%;
+  display: flex;
+  animation: slide 16s infinite;
+}
+
+/*Animation activated by keyframes*/
+@keyframes slide{
+  0%{
+      transform: translateX(0);
+  }
+  25%{
+      transform: translateX(0);
+  }
+  30%{
+      transform: translateX(-100%);
+  }
+  50%{
+      transform: translateX(-100%);
+  }
+  55%{
+      transform: translateX(-200%);
+  }
+  75%{
+      transform: translateX(-200%);
+  }
+  80%{
+      transform: translateX(-300%);
+  }
+  100%{
+      transform: translateX(-300%);
+  }
 }
